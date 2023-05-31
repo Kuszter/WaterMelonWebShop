@@ -1,0 +1,111 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg mx-2 my-3" (click)="showAddProduct()">Add New Product</button>
+      <button class="btn btn-warning btn-lg mx-2 my-3" (click)="showEditProduct()">Edit Product</button>
+      <button class="btn btn-danger btn-lg mx-2 my-3" (click)="showDeleteProduct()">Delete Product</button>
+      
+      <div *ngIf="showAddProductForm">
+        <form (submit)="addProduct()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="newProduct.Name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" [(ngModel)]="newProduct.Description" name="description" required></textarea>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="price" [(ngModel)]="newProduct.Price" name="price" required>
+            </div>
+            <div class="mb-3">
+              <label for="imageUrl" class="form-label">Image URL</label>
+              <input type="text" class="form-control" id="imageUrl" [(ngModel)]="newProduct.ImageUrl" name="imageUrl" required>
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelAddProduct()">Cancel</button>
+            </div>
+          </form>
+      </div>
+      
+      <div *ngIf="showEditProductForm">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>
+                  <button class="btn btn-primary" (click)="showEditForm(product)">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div *ngIf="selectedProduct">
+            <form (submit)="updateProduct()">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="selectedProduct.name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" [(ngModel)]="selectedProduct.description" name="description" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" [(ngModel)]="selectedProduct.price" name="price" required>
+              </div>
+              <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="imageUrl" [(ngModel)]="selectedProduct.imageUrl" name="imageUrl" required>
+              </div>
+              <div class="mb-3">
+                <label for="categoryId" class="form-label">Category ID</label>
+                <input type="text" class="form-control" id="categoryId" [(ngModel)]="selectedProduct.categoryId" name="categoryId" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Update</button>
+             
+
+            </form>
+          </div>
+          <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+      </div>
+      
+      <div *ngIf="showDeleteProductConfirmation">
+        <div>
+            <h3>Delete Product</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                  <td>{{ product.id }}</td>
+                  <td>{{ product.name }}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+                    
+
+                  </td>
+                </tr>
+              </tbody>
+              
+            </table>
+            <button type="button" class="btn btn-secondary" (click)="cancelDeleteProduct()">Cancel</button>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+  

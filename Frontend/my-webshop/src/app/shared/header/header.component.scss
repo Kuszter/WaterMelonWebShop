@@ -1,0 +1,27 @@
+/* General desktop view style */
+.navbar {
+  .dropdown-menu {
+    display: none;
+  }
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .show {
+    display: block !important;
+  }
+}
+
+/* This applies when the screen size is below 768px (typical for mobile screens) */
+@media (max-width: 767px) {
+  .navbar {
+    .dropdown-menu {
+      display: block; // or any style adjustment you want for mobile view
+    }
+    .nav-item.dropdown:hover .dropdown-menu {
+      display:none; 
+    }
+    .show {
+      display: block !important;
+    }
+  }
+}

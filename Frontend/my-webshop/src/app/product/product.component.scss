@@ -1,0 +1,44 @@
+.card-link {
+    text-decoration: none;
+    color: inherit;
+  
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  
+  .card-img-top {
+    max-height: 200px; // Változtassa meg a kép magasságát igény szerint
+    object-fit: cover; // A kép arányainak megtartása érdekében alkalmazzuk a "cover" értéket
+  }
+  
+  .card {
+    &:hover {
+      // Adjon hozzá egy árnyékot a kártyának, amikor az egérmutató fölött van
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+  }
+
+  .add-to-cart-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: white;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+  }
+  
+  

@@ -1,0 +1,46 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()" class="border rounded p-4">
+  <div *ngIf="registerForm.errors?.['passwordsMismatch']" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+    A jelszavak nem egyeznek.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div *ngIf="registerForm.get('password')?.errors?.['pattern']" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+    A jelszónak tartalmaznia kell legalább egy kis- és nagybetűt.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  
+  <div class="mb-3">
+    <label for="userName" class="form-label">Username</label>
+    <input type="text" id="userName" formControlName="userName" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="firstName" class="form-label">First Name</label>
+    <input type="text" id="firstName" formControlName="firstName" class="form-control" required>
+  </div>
+
+ 
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Last Name</label>
+    <input type="text" id="lastName" formControlName="lastName" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" formControlName="email" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" id="password" formControlName="password" class="form-control" required>
+  </div>
+  
+<div class="mb-3">
+  <label for="passwordConfirm" class="form-label">Confirm Password</label>
+  <input type="password" id="passwordConfirm" formControlName="passwordConfirm" class="form-control" required>
+</div>
+
+  <button type="submit" class="custom-button">Register</button>
+
+  <div class="text-center">
+    <p class="mb-2">Or</p>
+    <button (click)="registerWithGoogle()" class="btn btn-outline-danger w-100 mb-2">Register with Google</button>
+    <button (click)="registerWithFacebook()" class="btn btn-outline-primary w-100">Register with Facebook</button>
+  </div>
+</form>
