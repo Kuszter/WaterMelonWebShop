@@ -1,29 +1,29 @@
-A MelonShop egy online webáruház, ahol a felhasználók különböző termékeket találhatnak és megvásárolhatnak. A termékek kategóriákba vannak rendezve, így a felhasználók könnyen megtalálják az érdeklődésüknek megfelelő termékeket. Az adminisztrátorok képesek kezelni a termékeket és kategóriákat, valamint a felhasználók fiókját. A felhasználók bejelentkezhetnek a rendszerbe, böngészhetnek a termékek között, hozzáadhatják őket a kosarukhoz, és végül vásárolhatnak.
+MelonShop is an online store where users can find and buy different products. The products are grouped into categories so that users can easily find the products that match their interests. Administrators can manage products and categories as well as users' accounts. Users can log in to the system, browse products, add them to their shopping cart and finally make purchases.
 
-Funkciólista, végpont lista:
+Feature list, endpoint list:
 
-Felhasználók regisztrálása és bejelentkezése (Google és Facebook integrációval)
-Termékek böngészése kategóriák szerint
-Termékek hozzáadása a kosárhoz
-Kosárban lévő termékek kezelése (mennyiség módosítása, törlése)
-Vásárlás véglegesítése
-Adminisztráció: termékek és kategóriák létrehozása, szerkesztése, törlése
-Adminisztráció: felhasználók jogosultságainak kezelése.
+User registration and login (with Google and Facebook integration)
+Browsing products by category
+Add products to your cart
+Manage products in the basket (change quantity, delete)
+Adding items to cart
+Administration: create, edit, delete products and categories
+Administration: managing user rights.
 
-Backend API végpontok:
+Backend API endpoints:
 
-Felhasználók: /api/users
-Termékek: /api/products
-Kategóriák: /api/categories
-Kosár: /api/cart
-Bejelentkezés: /api/auth/login
-Regisztráció: /api/auth/register
+Users: /api/users
+Products: /api/products
+Categories: /api/categories
+Cart: /api/cart
+Categories Categories Categories Categories
+Register: /api/auth/register
 
-Technológiák és keretrendszerek:
+Technologies and frameworks:
 
 Backend: ASP.NET Core 6.0, Entity Framework Core (InMemory Database)
 Frontend: Angular, Bootstrap
-API dokumentáció: Swagger/OpenAPI
+API documentation: Swagger/OpenAPI
 
-Az alkalmazás Figma terve:
+Application Figma plan:
 https://www.figma.com/file/2jcBJ2GYjXLav7w0ABMGpv/KLIENSOLDALI-FEJLESZTES-FF-FIGMA-DESING-PLAN?node-id=0%3A1&t=GAHLEOYfJ9Dp6ERF-1
